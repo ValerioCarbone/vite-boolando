@@ -1,5 +1,14 @@
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            logo: '../../public/img/boolean-logo.png',
+            iconUser: '../../public/img/user.png',
+            iconHeart: '../../public/img/heart.png',
+            iconBag: '../../public/img/shopping-bag.png'
+        }
+    }
+}
 </script>
 
 <template>
@@ -16,7 +25,7 @@ export default {}
                     <div class="col-3">
                         <div class="logo-container">
                             <figure class="logo">
-                                <img src="../../public/img/boolean-logo.png" alt="logo">
+                                <img :src="logo" alt="logo">
                             </figure>
                         </div>
                     </div>
@@ -24,13 +33,13 @@ export default {}
                     <div class="col-3">
                         <div class="icons-container">
                             <figure class="menu-icons">
-                                <img src="../../public/img/user.png" alt="">
+                                <img :src="iconUser" alt="">
                             </figure>
                             <figure class="menu-icons">
-                                <img src="../../public/img/heart.png" alt="">
+                                <img :src="iconHeart" alt="">
                             </figure>
                             <figure class="menu-icons">
-                                <img src="../../public/img/shopping-bag.png" alt="">
+                                <img :src="iconBag" alt="">
                             </figure>
                         </div>
                     </div>
