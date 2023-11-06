@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+p {
+    line-height: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justifycon-spacebetween {
+    justify-content: space-between;
+
+}
+
+.justifycon-center {
+    justify-content: center;
+}
+
+.alignitems-center {
+    align-items: center;
+}
