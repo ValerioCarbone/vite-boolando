@@ -12,6 +12,6 @@ export default {
   <pageHeader />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use './styles/general.scss'
 </style>

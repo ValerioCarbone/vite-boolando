@@ -16,7 +16,7 @@ export default {}
                     <div class="col-3">
                         <div class="logo-container">
                             <figure class="logo">
-                                <img src="./img/boolean-logo.png" alt="logo">
+                                <img src="../../public/img/boolean-logo.png" alt="logo">
                             </figure>
                         </div>
                     </div>
@@ -24,13 +24,13 @@ export default {}
                     <div class="col-3">
                         <div class="icons-container">
                             <figure class="menu-icons">
-                                <img src="./img/user.png" alt="">
+                                <img src="../../public/img/user.png" alt="">
                             </figure>
                             <figure class="menu-icons">
-                                <img src="./img/heart.png" alt="">
+                                <img src="../../public/img/heart.png" alt="">
                             </figure>
                             <figure class="menu-icons">
-                                <img src="./img/shopping-bag.png" alt="">
+                                <img src="../../public/img/shopping-bag.png" alt="">
                             </figure>
                         </div>
                     </div>
@@ -67,5 +67,15 @@ export default {}
 .logo {
     max-width: 140px;
     padding: 18px 0;
+}
+
+.menu-items {
+    color: white;
+    font-weight: 600;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
 }
 </style>
