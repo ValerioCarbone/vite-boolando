@@ -24,10 +24,10 @@ export default {}
 footer {
     background-color: #1A1A1A;
     color: white;
-}
 
-footer>a {
-    display: inline-block;
+    a {
+        display: inline-block;
+    }
 }
 
 .links {

@@ -44,6 +44,9 @@ export default {
     position: relative;
     padding-top: 80px;
 
+    &:hover .img1 {
+        z-index: -2
+    }
 }
 
 .shopping-card {
@@ -123,9 +126,7 @@ export default {
     left: 0%;
 }
 
-.col-card:hover .img1 {
-    z-index: -2
-}
+
 
 .heart:hover {
     color: red;
