@@ -41,6 +41,8 @@ export default {}
 </template>
 
 <style scoped lang="scss">
+@use '../styles/general.scss';
+
 .navbar {
     background-color: #FF6900;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.42);
