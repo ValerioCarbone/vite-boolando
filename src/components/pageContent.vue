@@ -16,8 +16,8 @@ export default {
     <main>
         <div class="shopping">
             <div class="container">
-                <div class="row shopping-card" v-for="n in 6" :key="n">
-                    <div class="col-card ">
+                <div class="row shopping-card">
+                    <div class="col-card " v-for="n in 6" :key="n">
                         <div class="item-photos">
                             <img class="img1" :src="img1" alt="">
                             <img class="img2" :src="img2" alt="">

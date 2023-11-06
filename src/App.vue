@@ -1,11 +1,13 @@
 <script>
 import pageHeader from './components/pageHeader.vue'
 import pageContent from './components/pageContent.vue'
+import pageFooter from './components/pageFooter.vue'
 
 export default {
   components: {
     pageHeader: pageHeader,
-    pageContent
+    pageContent,
+    pageFooter
   }
 }
 </script>
@@ -13,6 +15,7 @@ export default {
 <template>
   <pageHeader />
   <pageContent />
+  <pageFooter />
 </template>
 
 <style lang="scss">
