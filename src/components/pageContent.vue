@@ -2,8 +2,8 @@
 export default {
     data() {
         return {
-            img1: '/public/img/1.webp',
-            img2: '/public/img/1b.webp'
+            img1: '/img/1.webp',
+            img2: '/img/1b.webp'
         }
     }
 }
