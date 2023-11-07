@@ -75,7 +75,7 @@ export default {
             <img class="img2" :src="`/img/${item.backImage}`">
             <span class="info-card discount" v-show="isDiscounted(item)">{{ isDiscounted(item) }}</span>
             <span class="info-card sosten sosten-pos2" v-show="isSustainable(item)">{{ isSustainable(item) }}</span>
-            <span class="heart"> &hearts;</span>
+            <span :class="item.isInFavorites === true ? 'favorite' : ''" class="heart"> &hearts;</span>
         </div>
         <div class="item-description">
             <p class="marca">{{ item.brand }}</p>
@@ -179,5 +179,9 @@ export default {
     &:hover .img1 {
         z-index: -2
     }
+}
+
+.favorite {
+    color: red;
 }
 </style>
