@@ -88,6 +88,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.heart.favorite:hover {
+    color: black;
+}
+
 .info-card {
     padding: 4px 8px;
     color: white;
