@@ -2,10 +2,10 @@
 export default {
     data() {
         return {
-            logo: '../../public/img/boolean-logo.png',
-            iconUser: '../../public/img/user.png',
-            iconHeart: '../../public/img/heart.png',
-            iconBag: '../../public/img/shopping-bag.png'
+            logo: '/public/img/boolean-logo.png',
+            iconUser: '/public/img/user.png',
+            iconHeart: '/public/img/heart.png',
+            iconBag: '/public/img/shopping-bag.png'
         }
     }
 }
