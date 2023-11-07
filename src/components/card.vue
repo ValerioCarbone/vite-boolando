@@ -71,7 +71,7 @@ export default {
 <template>
     <div class="col-card ">
         <div class="item-photos">
-            <img class="img1" :src="`/img/${item.frontImg}`">
+            <img class="img1" :src="`/img/${item.frontImage}`">
             <img class="img2" :src="`/img/${item.backImage}`">
             <span class="info-card discount">{{ isDiscounted(item) }}</span>
             <span class="info-card sosten sosten-pos2">{{ isSustainable(item) }}</span>

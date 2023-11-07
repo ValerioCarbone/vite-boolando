@@ -3,6 +3,9 @@ import itemsJson from '../../db.json';
 import card from './card.vue';
 
 export default {
+    components: {
+        card
+    },
     data() {
         return {
             itemsDb: itemsJson.products
@@ -20,9 +23,7 @@ export default {
         <div class="shopping">
             <div class="container">
                 <div class="row shopping-card">
-                    <div v-for="currentItem in itemsDb" :key="itemsDb.id">
-                        <card :item="currentItem" />
-                    </div>
+                    <card v-for="currentItem in itemsDb" :key="itemsDb.id" :item="currentItem" />
                 </div>
             </div>
         </div>
