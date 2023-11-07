@@ -46,7 +46,7 @@ export default {
     },
     methods: {
         isDiscounted(item) {
-            for (let i = 0; i > item.badges.length; i++) {
+            for (let i = 0; i < item.badges.length; i++) {
                 if (item.badges[i].type === 'discount') {
                     return item.badges[i].value
                 } else {
@@ -55,7 +55,7 @@ export default {
             }
         },
         isSustainable(item) {
-            for (let i = 0; i > item.badges.length; i++) {
+            for (let i = 0; i < item.badges.length; i++) {
                 if (item.badges[i].type === 'tag') {
                     return item.badges[i].value
                 } else {
