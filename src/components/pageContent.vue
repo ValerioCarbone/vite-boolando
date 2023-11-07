@@ -23,7 +23,7 @@ export default {
         <div class="shopping">
             <div class="container">
                 <div class="row shopping-card">
-                    <card v-for="currentItem in itemsDb" :key="itemsDb.id" :item="currentItem" />
+                    <card v-for="(currentItem, index) in itemsDb" :key="itemsDb[index].id" :item="currentItem" />
                 </div>
             </div>
         </div>

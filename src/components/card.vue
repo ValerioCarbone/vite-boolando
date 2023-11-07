@@ -40,26 +40,26 @@ export default {
                     type: String
                 }
             }]
-
+        },
+        data() {
+            return {}
         }
-
     },
     methods: {
         isDiscounted(item) {
+
             for (let i = 0; i < item.badges.length; i++) {
                 if (item.badges[i].type === 'discount') {
                     return item.badges[i].value
-                } else {
-                    return ''
                 }
             }
+
         },
         isSustainable(item) {
+
             for (let i = 0; i < item.badges.length; i++) {
                 if (item.badges[i].type === 'tag') {
                     return item.badges[i].value
-                } else {
-                    return ''
                 }
             }
         }
@@ -73,8 +73,8 @@ export default {
         <div class="item-photos">
             <img class="img1" :src="`/img/${item.frontImage}`">
             <img class="img2" :src="`/img/${item.backImage}`">
-            <span class="info-card discount">{{ isDiscounted(item) }}</span>
-            <span class="info-card sosten sosten-pos2">{{ isSustainable(item) }}</span>
+            <span class="info-card discount" v-show="isDiscounted(item)">{{ isDiscounted(item) }}</span>
+            <span class="info-card sosten sosten-pos2" v-show="isSustainable(item)">{{ isSustainable(item) }}</span>
             <span class="heart"> &hearts;</span>
         </div>
         <div class="item-description">
