@@ -1,6 +1,6 @@
 <script>
-import { store } from '../../store';
-import card from './card.vue';
+import { store } from '../store'
+import card from './card.vue'
 
 export default {
     components: {
@@ -8,11 +8,9 @@ export default {
     },
     data() {
         return {
+            store,
             itemsDb: store.products
         }
-    },
-    created() {
-        console.log(this.itemsDb)
     }
 }
 

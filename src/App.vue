@@ -3,18 +3,18 @@ import pageHeader from './components/pageHeader.vue'
 import pageContent from './components/pageContent.vue'
 import pageFooter from './components/pageFooter.vue'
 import axios from 'axios'
-import { store } from '../store'
+import { store } from './store'
 
 export default {
-  components: {
-    pageHeader: pageHeader,
-    pageContent,
-    pageFooter
-  },
   data() {
     return {
       store
     }
+  },
+  components: {
+    pageHeader: pageHeader,
+    pageContent,
+    pageFooter
   },
   created() {
     axios
@@ -22,11 +22,9 @@ export default {
       .then((res) => {
         const productsDb = res.data
         this.store.products = productsDb
-      })
+        console.log(this.store.products)
 
-  },
-  mounted() {
-    console.log(this.store)
+      })
   }
 }
 </script>
