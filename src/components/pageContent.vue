@@ -1,5 +1,5 @@
 <script>
-import itemsJson from '../../db.json';
+import { store } from '../../store';
 import card from './card.vue';
 
 export default {
@@ -8,7 +8,7 @@ export default {
     },
     data() {
         return {
-            itemsDb: itemsJson.products
+            itemsDb: store.products
         }
     },
     created() {
