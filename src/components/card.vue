@@ -85,7 +85,7 @@ export default {
         </div>
         <div class="item-description">
             <p class="marca">{{ item.brand }}</p>
-            <p class="item-type">{{ item.name }}</p>
+            <p class="item-type" @click=" $emit('show', item)">{{ item.name }}</p>
             <p class="price"><span class="discounted-price">14,99 &euro;</span><span class="full-price">{{ item.price }}
                     &euro;</span>
             </p>
@@ -94,6 +94,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.item-type:hover,
+.heart:hover {
+    cursor: default;
+}
+
+.item-type:hover {
+    text-decoration: underline solid;
+}
+
 .heart.favorite:hover {
     color: black;
 }
@@ -174,7 +183,7 @@ export default {
     position: absolute;
     top: 10px;
     right: 0%;
-    z-index: 99;
+    z-index: 3;
 }
 
 .item-photos {
