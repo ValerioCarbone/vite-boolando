@@ -30,7 +30,16 @@ export default {
                 }
             }
 
+        },
+        getDiscountedPrice() {
+            if (this.isDiscounted(this.selectedItem)) {
+                let a = parseInt(this.isDiscounted(this.selectedItem))
+                a = Math.abs(a)
+                let i = this.selectedItem.price - ((this.selectedItem.price * a) / 100)
+                return i.toFixed(2)
+            }
         }
+
     }
 }
 
@@ -60,20 +69,20 @@ export default {
                     <img :src="`./img/${selectedItem.frontImage}`" alt="">
                 </div>
                 <div class="col-6 card-text">
-                    <p>
+                    <p @click="abc()">
                         Brand :
                     <h4>{{ selectedItem.brand }}</h4>
                     </p>
                     <p>
                         Price :
-                    <h4>{{ selectedItem.price }} &euro;</h4>
+                    <h4 :class="isDiscounted(selectedItem) ? 'line-through' : ''">{{ selectedItem.price }} &euro;</h4>
                     </p>
                     <p v-if="isDiscounted(selectedItem)">Discount :
-                    <h4>{{ isDiscounted(selectedItem) }}</h4>
+                    <h4 class="red">{{ isDiscounted(selectedItem) }}</h4>
                     </p>
                     <p v-if="isDiscounted(selectedItem)">
                         Discounted price :
-                    <h4>14,99 &euro;</h4>
+                    <h4 class="red">{{ getDiscountedPrice() }} &euro;</h4>
                     </p>
                 </div>
             </div>
@@ -114,6 +123,14 @@ export default {
     }
 
 
+}
+
+.line-through {
+    text-decoration: line-through solid;
+}
+
+.red {
+    color: red;
 }
 
 .card-title {

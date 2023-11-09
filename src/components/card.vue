@@ -57,6 +57,14 @@ export default {
             }
 
         },
+        getDiscountedPrice() {
+            if (this.isDiscounted(this.item)) {
+                let a = parseInt(this.isDiscounted(this.item))
+                a = Math.abs(a)
+                let i = this.item.price - ((this.item.price * a) / 100)
+                return i.toFixed(2)
+            }
+        },
         isSustainable(item) {
 
             for (let i = 0; i < item.badges.length; i++) {
@@ -87,7 +95,7 @@ export default {
             <p class="marca">{{ item.brand }}</p>
             <p class="item-type" @click=" $emit('show', item)">{{ item.name }}</p>
             <p class="price">
-                <span v-if="isDiscounted(item)" class="discounted-price">14,99 &euro;</span>
+                <span v-if="isDiscounted(item)" class="discounted-price">{{ getDiscountedPrice() }} &euro;</span>
                 <span :class="isDiscounted(item) ? 'line-through' : ''" class="full-price">{{ item.price }} &euro;</span>
             </p>
         </div>
