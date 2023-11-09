@@ -78,7 +78,7 @@ export default {
         <div class="item-photos">
             <img class="img1" :src="`/img/${item.frontImage}`">
             <img class="img2" :src="`/img/${item.backImage}`">
-            <span class="info-card discount" v-show="isDiscounted(item)">{{ isDiscounted(item) }}</span>
+            <span class="info-card discount" v-if="isDiscounted(item)">{{ isDiscounted(item) }}</span>
             <span class="info-card sosten sosten-pos2" v-show="isSustainable(item)">{{ isSustainable(item) }}</span>
             <span :class="item.isInFavorites === true ? 'favorite' : ''" class="heart" @click="setFavorite()">
                 &hearts;</span>
@@ -86,14 +86,19 @@ export default {
         <div class="item-description">
             <p class="marca">{{ item.brand }}</p>
             <p class="item-type" @click=" $emit('show', item)">{{ item.name }}</p>
-            <p class="price"><span class="discounted-price">14,99 &euro;</span><span class="full-price">{{ item.price }}
-                    &euro;</span>
+            <p class="price">
+                <span v-if="isDiscounted(item)" class="discounted-price">14,99 &euro;</span>
+                <span :class="isDiscounted(item) ? 'line-through' : ''" class="full-price">{{ item.price }} &euro;</span>
             </p>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
+.line-through {
+    text-decoration: line-through solid;
+}
+
 .item-type:hover,
 .heart:hover {
     cursor: default;
@@ -145,7 +150,7 @@ export default {
 }
 
 .full-price {
-    text-decoration: line-through;
+
     display: inline-block;
     padding-left: 3px;
 }

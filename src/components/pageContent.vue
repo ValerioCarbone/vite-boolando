@@ -21,6 +21,15 @@ export default {
         closeModal() {
             this.modal = false
             this.selectedItem = {}
+        },
+        isDiscounted(item) {
+
+            for (let i = 0; i < item.badges.length; i++) {
+                if (item.badges[i].type === 'discount') {
+                    return item.badges[i].value
+                }
+            }
+
         }
     }
 }
@@ -41,22 +50,85 @@ export default {
     <div class="modal" v-if="modal">
         <div class="card">
             <div class="card-header">
-                <div class="card-title">{{ selectedItem.name }}</div>
+                <div class="card-title">
+                    <h3>{{ selectedItem.name }}</h3>
+                </div>
                 <span @click="closeModal()" class="closing-icon"> &#10005;</span>
             </div>
-            <div class="card-body"></div>
+            <div class="card-body">
+                <div class="col-6">
+                    <img :src="`./img/${selectedItem.frontImage}`" alt="">
+                </div>
+                <div class="col-6 card-text">
+                    <p>
+                        Brand :
+                    <h4>{{ selectedItem.brand }}</h4>
+                    </p>
+                    <p>
+                        Price :
+                    <h4>{{ selectedItem.price }} &euro;</h4>
+                    </p>
+                    <p v-if="isDiscounted(selectedItem)">Discount :
+                    <h4>{{ isDiscounted(selectedItem) }}</h4>
+                    </p>
+                    <p v-if="isDiscounted(selectedItem)">
+                        Discounted price :
+                    <h4>14,99 &euro;</h4>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
+.col-6 {
+    flex-basis: calc(100% / 2);
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .col-6 {
+        padding-top: 16px;
+
+        img {
+            border: 1px solid rgba(0, 0, 0, 0.3);
+        }
+    }
+
+
+    .col-6.card-text {
+        text-align: center;
+        line-height: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h4 {
+            font-size: 26px;
+        }
+
+
+    }
+
+
+}
+
+.card-title {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 500;
+    font-size: 28px;
+}
+
 .closing-icon:hover {
     cursor: default;
 }
 
 .card-header {
     display: flex;
-    justify-content: space-between;
 }
 
 .shopping-card {
@@ -88,7 +160,7 @@ export default {
     z-index: 15;
     border-radius: 15px;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+    padding: 20px;
     background-color: white;
 }
 </style>
