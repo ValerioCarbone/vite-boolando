@@ -71,9 +71,15 @@ export default {
                 }
             }
         },
-        setFavorite() {
-
-        }
+        // setFavorite(id) {
+        //     currentIndex === id
+        //     if (this.store.products[currentIndex].isInFavorites === false) {
+        //         this.store.products[currentIndex].isInFavorites === true
+        //     } else if (this.store.products[currentIndex].isInFavorites === true) {
+        //         this.store.products[currentIndex].isInFavorites === false
+        //     }
+        //     console.log(this.store.products[currentIndex].isInFavorites)
+        // }
     }
 }
 
