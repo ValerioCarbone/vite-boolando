@@ -71,6 +71,12 @@ export default {
                 }
             }
         },
+        setFavorite() {
+            this.item.isInFavorites = !this.item.isInFavorites
+        }
+        // setStatuus() {
+        //     this.currentIndex === this.item.id
+        // }
         // setFavorite(id) {
         //     currentIndex === id
         //     if (this.store.products[currentIndex].isInFavorites === false) {
@@ -81,6 +87,9 @@ export default {
         //     console.log(this.store.products[currentIndex].isInFavorites)
         // }
     }
+    // create() {
+
+    // }
 }
 
 </script>
@@ -92,7 +101,7 @@ export default {
             <img class="img2" :src="`/img/${item.backImage}`">
             <span class="info-card discount" v-show="isDiscounted(item)">{{ isDiscounted(item) }}</span>
             <span class="info-card sosten sosten-pos2" v-show="isSustainable(item)">{{ isSustainable(item) }}</span>
-            <span :class="item.isInFavorites === true ? 'favorite' : ''" class="heart">
+            <span :class="item.isInFavorites === true ? 'favorite' : ''" class="heart" @click="setFavorite()">
                 &hearts;</span>
         </div>
         <div class="item-description">
