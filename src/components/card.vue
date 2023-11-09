@@ -1,5 +1,11 @@
 <script>
+import { store } from '../store'
 export default {
+    data() {
+        return {
+            store
+        }
+    },
     props: {
         item: {
             frontImage: {
@@ -65,15 +71,9 @@ export default {
                 }
             }
         },
-        // setFavorite(item) {
-        //     if (item.isInFavorites === true) {
-        //         item.isInFavorites === false
-        //     } else if (item.isInFavorites === false) {
-        //         item.isInFavorites === true
-        //     }
-        //     console.log(item.isInFavorites)
+        setFavorite() {
 
-        // }
+        }
     }
 }
 

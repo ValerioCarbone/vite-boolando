@@ -8,8 +8,7 @@ export default {
     },
     data() {
         return {
-            store,
-            itemsDb: store.products
+            store
         }
     }
 }
@@ -21,7 +20,8 @@ export default {
         <div class="shopping">
             <div class="container">
                 <div class="row shopping-card">
-                    <card v-for="(currentItem, index) in itemsDb" :key="itemsDb[index].id" :item="currentItem" />
+                    <card v-for="(currentItem, index) in store.products" :key="store.products[index].id"
+                        :item="currentItem" />
                 </div>
             </div>
         </div>
